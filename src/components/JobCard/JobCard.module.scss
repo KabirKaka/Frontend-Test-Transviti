@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.head {
+  margin-bottom: 8px;
+}
+.promoted {
+  //   background: linear-gradient(...);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+}
+.apply {
+  background: $primary;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.save {
+  background: transparent;
+  border: 1px solid #eee;
+  padding: 8px;
+  border-radius: 6px;
+}

@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.searchInput {
+  display: flex;
+  align-items: center;
+  background: #f3f4f6; // light background like in screenshot
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 6px 10px;
+  min-width: 180px;
+  transition: border 0.2s, background 0.2s;
+
+  &:focus-within {
+    border-color: $primary;
+    background: #fff;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    color: $text-muted;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: $font-size-sm;
+    width: 100%;
+    color: $text;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+}

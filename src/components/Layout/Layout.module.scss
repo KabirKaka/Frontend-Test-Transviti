@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+.app {
+  min-height: 100vh;
+  background: $page-bg;
+}
+.main {
+  padding: 32px 48px;
+  max-width: 1443px;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: 2rem;
+}

@@ -1,0 +1,42 @@
+// Colors
+$primary: #0154aa;
+$secondary: #4a4a4a;
+$background: #f9fafb;
+$page-bg: #f3f4f6;
+$text: #111827;
+$text-muted: #6b7280;
+$border: #e5e7eb;
+$success: #10b981;
+$error: #ef4444;
+
+// Spacing scale (4px base)
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-8: 32px;
+$space-10: 40px;
+
+// Typography
+$font-family-base: "Neue Haas Grotesk Display Pro";
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+
+// Font weights
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Breakpoints
+$breakpoints: (
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+);

@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* Variants */
+.primary {
+  background: $primary;
+  color: #fff;
+
+  &:hover {
+    background: darken($primary, 8%);
+  }
+}
+
+.secondary {
+  background: #f3f4f6;
+  color: $text;
+
+  &:hover {
+    background: darken(#f3f4f6, 4%);
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: $text-muted;
+
+  &:hover {
+    color: $primary;
+    background: rgba($primary, 0.05);
+  }
+}
