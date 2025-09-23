@@ -58,3 +58,22 @@
   background: $primary;
   border: 1px solid #e9ecef;
 }
+
+/* 🔹 Responsiveness */
+@include respond-to("md") {
+  .searchBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .separator {
+    display: none; // no separators when stacked
+  }
+
+  .input,
+  .select,
+  .button {
+    width: 100%;
+  }
+}
