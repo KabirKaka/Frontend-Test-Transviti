@@ -1,5 +1,5 @@
 @import "../../styles/variables";
-
+@import "../../styles//mixins";
 .searchBar {
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@
   background: #fff;
   padding: 12px 16px;
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  @include card-shadow;
 }
 
 .input {
@@ -19,7 +19,7 @@
   outline: none;
   &:focus {
     border-color: $primary;
-    box-shadow: 0 0 0 2px rgba($primary, 0.2);
+    @include card-shadow;
   }
 }
 
@@ -34,12 +34,8 @@
   &:focus {
     border-color: $primary;
     border: none;
-    box-shadow: 0 0 0 2px rgba($primary, 0.2);
+    @include card-shadow;
   }
-}
-
-.icon {
-  color: white;
 }
 
 .button {
@@ -48,10 +44,17 @@
   font-weight: 600;
   padding: 10px 18px;
   border: none;
+  gap: 10px;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s ease;
   //   &:hover {
   // background: darken($primary, 8%);
   //   }
+}
+.separator {
+  height: 36.00000000000003px;
+  border-width: 1px;
+  background: $primary;
+  border: 1px solid #e9ecef;
 }

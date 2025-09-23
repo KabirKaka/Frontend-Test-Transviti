@@ -19,7 +19,6 @@
   }
 }
 
-/* Variants */
 .primary {
   background: $primary;
   color: #fff;
@@ -30,11 +29,11 @@
 }
 
 .secondary {
-  background: #f3f4f6;
+  background: $page-bg;
   color: $text;
 
   &:hover {
-    background: darken(#f3f4f6, 4%);
+    background: darken($page-bg, 4%);
   }
 }
 

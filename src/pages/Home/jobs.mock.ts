@@ -9,7 +9,6 @@ const jobsMock: Job[] = [
     remote: true,
     postedAt: "2025-09-20T12:00:00Z",
     applicantsCount: 22,
-    promoted: true,
   },
   {
     id: "2",
@@ -37,7 +36,6 @@ const jobsMock: Job[] = [
     remote: true,
     postedAt: "2025-09-21T08:00:00Z",
     applicantsCount: 12,
-    promoted: true,
   },
   {
     id: "5",
@@ -47,6 +45,33 @@ const jobsMock: Job[] = [
     remote: true,
     postedAt: "2025-09-21T10:00:00Z",
     applicantsCount: 10,
+  },
+  {
+    id: "6",
+    title: "UI/UX Designer",
+    company: "Teams",
+    location: "Seattle, USA (Remote)",
+    remote: true,
+    postedAt: "2025-09-21T12:00:00Z",
+    applicantsCount: 8,
+  },
+  {
+    id: "7",
+    title: "UI/UX Designer",
+    company: "Teams",
+    location: "Seattle, USA (Remote)",
+    remote: true,
+    postedAt: "2025-09-21T12:00:00Z",
+    applicantsCount: 8,
+  },
+  {
+    id: "8",
+    title: "UI/UX Designer",
+    company: "Teams",
+    location: "Seattle, USA (Remote)",
+    remote: true,
+    postedAt: "2025-09-21T12:00:00Z",
+    applicantsCount: 8,
   },
 ];
 

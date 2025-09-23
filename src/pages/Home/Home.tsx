@@ -9,9 +9,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import type { Job } from "../../types/job";
 
 const Home: React.FC = () => {
-  const promoted = jobsMock.filter((j) => j.promoted);
-  const recommended = jobsMock.slice(0, 8);
-
+  const tags = ["Frontend", "Backend", "Graphic Designer"];
   return (
     <div className={styles.container}>
       <aside className={styles.left}>
@@ -39,26 +37,44 @@ const Home: React.FC = () => {
             console.log(query, location, jobType);
           }}
         />
-        <div>
-          <h2>Featured Jobs</h2>
+        <div className={styles.similarTags}>
+          Similar:
+          {tags.map((tag, idx) => (
+            <span key={idx}>{tag}</span>
+          ))}
+        </div>
+        <div className={styles.divider}></div>
+        <div className={styles.section}>
+          <h2>
+            Featured Jobs{" "}
+            <span className={styles.tagLine}>See Featured Jobs</span>
+          </h2>
           <div className={styles.grid}>
-            {promoted.map((job: Job) => (
+            {jobsMock.slice(0, 4).map((job: Job) => (
+              <JobCard key={job.id} job={job} isPromoted={true} />
+            ))}
+          </div>
+        </div>
+        <div className={styles.divider}></div>
+        <div className={styles.section}>
+          <h2>
+            Recommended Jobs
+            <span className={styles.tagLine}>See Recommended Jobs</span>
+          </h2>
+          <div className={styles.grid}>
+            {jobsMock.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
           </div>
         </div>
-        <div>
-          <h2>Recommended Jobs</h2>
+        <div className={styles.divider}></div>
+        <div className={styles.section}>
+          <h2>
+            Latest Jobs
+            <span className={styles.tagLine}>See Latest Jobs</span>
+          </h2>
           <div className={styles.grid}>
-            {recommended.map((job) => (
-              <JobCard key={job.id} job={job} />
-            ))}
-          </div>
-        </div>
-        <div>
-          <h2>Latest Jobs</h2>
-          <div className={styles.grid}>
-            {recommended.map((job) => (
+            {jobsMock.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
           </div>

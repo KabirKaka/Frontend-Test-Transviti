@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ProfileCard.module.scss";
+import { FaChevronDown } from "react-icons/fa";
 
 interface StatItem {
   label: string;
@@ -52,8 +53,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       </ul>
 
       <div className={styles.calendar}>
-        <h3>My calendar</h3>
-        <span className={styles.subtext}>Upcoming Interviews</span>
+        <div>
+          <h3>My calendar</h3>
+          <span className={styles.subtext}>Upcoming Interviews</span>
+        </div>
+        <FaChevronDown className={styles.icon} />
       </div>
     </div>
   );

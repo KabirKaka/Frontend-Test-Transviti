@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "./SearchBar.module.scss";
+import { BiSearch } from "react-icons/bi";
 import Button from "../Button/Button";
-import SearchIcon from "../../assets/search.svg";
+import styles from "./SearchBar.module.scss";
 
 interface SearchBarProps {
   onSearch: (query: string, location: string, jobType: string) => void;
@@ -32,6 +32,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         onChange={(e) => setQuery(e.target.value)}
         className={styles.input}
       />
+      <div className={styles.separator}></div>
 
       <select
         id="jobLocation"
@@ -44,7 +45,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         <option value="usa">USA</option>
         <option value="pakistan">Pakistan</option>
       </select>
-
+      <div className={styles.separator}></div>
       <select
         id="jobType"
         value={jobType}
@@ -61,9 +62,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       <Button
         type="submit"
         className={styles.button}
-        leftIcon={
-          <img src={SearchIcon} alt="Search Icon" className={styles.icon} />
-        }
+        leftIcon={<BiSearch size={22} />}
       >
         Search
       </Button>

@@ -4,7 +4,7 @@
 .searchInput {
   display: flex;
   align-items: center;
-  background: #f3f4f6; // light background like in screenshot
+  background: $page-bg;
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 6px 10px;

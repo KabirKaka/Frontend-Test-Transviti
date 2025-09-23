@@ -1,35 +1,126 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as *;
 
 .card {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
   background: #fff;
-  border-radius: 8px;
-  padding: 12px;
+  border: 1px solid $page-bg;
+  position: relative;
+  @include card-shadow;
+  transition: 0.2s ease, transform 0.2s ease;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+
+  &:hover {
+    transform: translateY(-2px);
+    @include card-shadow;
+  }
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 5px;
+
+  h1 {
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-weight: 600;
+    font-style: 65 Medium;
+    font-size: 10px;
+    color: #333333;
+  }
 }
-.head {
-  margin-bottom: 8px;
+
+.header {
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  .logo {
+    width: 40px;
+    background: $page-bg;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 9.11px;
+    padding-top: 6px;
+    padding-right: 8px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .title {
+      font-family: "Neue Haas Grotesk Display Pro";
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .company {
+      color: #333333;
+      font-family: "Neue Haas Grotesk Display Pro";
+      font-weight: 500;
+      font-size: 12px;
+
+      span {
+        color: $text-muted;
+      }
+    }
+  }
 }
-.promoted {
-  //   background: linear-gradient(...);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  div {
+    display: flex;
+    color: $text-muted;
+    font-size: 12px;
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-weight: 500;
+
+    img {
+      margin-right: 5px;
+    }
+  }
 }
+
 .actions {
   display: flex;
-  gap: 8px;
+  gap: 20px;
+  width: 100%;
 }
-.apply {
+
+.bookmark {
+  width: 100%;
   background: $primary;
+  border: none;
+  color: $page-bg;
+  cursor: pointer;
   color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-}
-.save {
-  background: transparent;
-  border: 1px solid #eee;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 0.25rem;
+  transition: color 0.2s ease;
+
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+
+  svg {
+    stroke-width: 1.5;
+  }
 }

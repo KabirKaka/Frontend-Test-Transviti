@@ -1,4 +1,6 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
+
 .header {
   width: 100%;
   height: 70px;
@@ -7,61 +9,129 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
+  border-bottom: 1px solid $page-bg;
 }
+
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 0 auto;
-  gap: 24px;
-  padding: 16px 0;
-  max-width: 1443px;
+  padding: 0 1rem;
+  max-width: 1440px;
+  height: 100%;
+  gap: 1rem;
 }
+
 .brand {
   font-weight: 700;
   font-size: 20px;
 }
-.nav {
-  ul {
-    display: flex;
-    gap: $space-5;
-    list-style: none;
-  }
-
-  a {
-    font-weight: $font-weight-medium;
-    font-size: $font-size-base;
-    color: $text-muted;
-    text-decoration: none;
-    padding-bottom: 4px;
-    transition: color 0.2s, border-color 0.2s;
-
-    &:hover {
-      color: $primary;
-      text-decoration: none;
-    }
-  }
-
-  .active {
-    color: $primary;
-    border-color: $primary;
-  }
+.nav ul {
+  display: flex;
+  gap: $space-5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.search {
-  flex: 1;
-  // margin: 0 $space-6;
+.nav a {
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  color: $text-muted;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $primary;
+    border-bottom: 2px solid $primary;
+  }
+
+  &.active {
+    color: $primary;
+    border-bottom: 2px solid $primary;
+  }
 }
 
 .actions {
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-right: 2rem;
+
+  .cta {
+    white-space: nowrap;
+  }
 }
+
 .avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@include respond-to("lg") {
+  .nav {
+    display: none;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: block;
+    background: #fff;
+    border-top: 1px solid $page-bg;
+    padding: 1rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      font-size: 1rem;
+      font-weight: $font-weight-medium;
+      color: #333;
+
+      &:hover {
+        color: $primary;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@include respond-to("sm") {
+  .actions {
+    gap: 6px;
+
+    .cta {
+      display: none;
+    }
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
 }
