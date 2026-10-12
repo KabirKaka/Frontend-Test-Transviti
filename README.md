@@ -1,69 +1,46 @@
-# React + TypeScript + Vite
+# Job Portal UI · Frontend Test (Transviti)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A job-search dashboard built with React, TypeScript and SCSS Modules as a frontend assessment for Transviti. It turns a design into a responsive, component-driven layout with typed data.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Profile card sidebar with cover image, avatar, title and location
+- Accessible job search bar (keyword, location and job type) with a typed `onSearch` callback
+- Featured and recommended job grids rendered from typed mock data (`Job` type)
+- Reusable building blocks: `Button`, `Header`, `JobCard`, `Layout`, `ProfileCard`, `SearchBar`, `SearchInput`
+- Design tokens and mixins in SCSS partials (`_variables`, `_mixins`, `_reset`, `_fonts`)
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18 + TypeScript
+- Vite (SWC)
+- SCSS Modules
+- React Router
+- React Icons
+- Moment.js
+- ESLint (typescript-eslint)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open the URL Vite prints (usually http://localhost:5173). `npm run build` creates a production build.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/   # Button, Header, JobCard, Layout, ProfileCard, SearchBar, SearchInput
+├── pages/Home/   # Home page + jobs.mock.ts
+├── styles/       # SCSS variables, mixins, reset, fonts, global
+└── types/job.ts  # Job type
+```
+
+
+## Author
+
+**Muhammad Kabir Kaka**, Frontend Engineer (React · Next.js · TypeScript)  
+[GitHub](https://github.com/KabirKaka) · [LinkedIn](https://www.linkedin.com/in/muhammad-kabir-kaka)
